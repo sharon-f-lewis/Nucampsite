@@ -19,6 +19,7 @@
   </head>
 
   <body>
+    <!-- Header -->
     <header class="jumbotron jumbotron-fluid">
       <div class="container">
         <div class="row">
@@ -37,6 +38,7 @@
       </div> <!-- end container-->
     </header>
 
+    <!-- Modal for Reserve a Campsite -->
     <div id="reserveModal" class="modal fade" role="dialog">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -69,7 +71,7 @@
                 </div> <!-- end row -->
                 <div class="form-group row">
                   <label for="campsiteType" class="col-sm-6 col-form-label">Campsite Type</label>
-                  <div class="col-2 btn-group btn-group-toggle data-toggle="buttons">
+                  <div class="col-2 btn-group btn-group-toggle data-toggle=" buttons">
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                       <label class="btn btn-success active">
                         <input type="radio" name="siteType" id="siteTent" value="tent" autocomplete="off" checked> Tent
@@ -78,7 +80,8 @@
                         <input type="radio" name="siteType" id="siteRV" valute="RV" autocomplete="off"> RV
                       </label>
                     </div>
-                  </div> <!--- end col -->
+                  </div>
+                  <!--- end col -->
                 </div> <!-- end row -->
                 <div class="form-group row">
                   <div class="col-md-10">
@@ -93,6 +96,7 @@
       </div> <!-- end modal-dialog -->
     </div> <!-- end modal-->
 
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
       <div class="container">
         <a class="navbar-brand" href="#"><img src="img/logo.png" height="30" width="30" /></a>
@@ -117,6 +121,7 @@
       </div> <!-- end container -->
     </nav>
 
+    <!-- Modal for login -->
     <div id="loginModal" class="modal fade" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -155,7 +160,10 @@
       </div> <!-- end modal-dialog -->
     </div> <!-- end modal-->
 
+    <!-- Main Container -->
     <div class="container">
+
+      <!-- Main page Row 1 -->
       <div class="row row-content">
         <div class="col-md-8 mx-auto">
           <div id="homeCarousel" class="carousel slide" data-ride="carousel">
@@ -198,9 +206,19 @@
               <span class="carousel-control-next-icon"></span>
               <span class="sr-only">Next</span>
             </a>
+            <div class="btn-group" id="carouselButton">
+              <button class="btn btn-danger btn-sm" id="carouselPause">
+                <i class="fa fa-pause"></i>
+              </button>
+              <button class="btn btn-danger btn-sm" id="carouselPlay">
+                <i class="fa fa-play"></i>
+              </button>
+            </div> <!-- end button-group -->
           </div> <!-- end carousel -->
         </div> <!-- end col -->
       </div> <!-- end row -->
+
+      <!-- Main page Row 2-->
       <div class="row row-content align-items-center">
         <div class="col-sm-4 order-sm-last col-md-3">
           <h2 class="text-sm-right">Discover & Review</h2>
@@ -217,6 +235,7 @@
         </div> <!-- end col -->
       </div> <!-- end row -->
 
+      <!-- Main page Row 3 -->
       <div class="row row-content align-items-center">
         <div class="col-sm-4 col-md-3">
           <h2>Featured Campsites</h2>
@@ -234,6 +253,7 @@
         </div> <!-- end col -->
       </div> <!-- end row -->
 
+      <!-- Main page Row 4 -->
       <div class="row row-content align-items-center">
         <div class="col-sm-4 order-sm-last col-md-3">
           <h2 class="text-sm-right">Our Community Partners</h2>
@@ -252,6 +272,7 @@
       </div> <!-- end row -->
     </div> <!-- end container-->
 
+    <!-- Footer -->
     <footer class="site-footer">
       <div class="container">
         <div class="row">
@@ -288,6 +309,17 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
+    <script>
+      $(function () {
+        $(".carousel").carousel( { interval: 2000, pause: "false" } );
+        $("#carouselPause").click(function () {
+          $(".carousel").carousel("pause");
+        });
+        $("#carouselPlay").click(function() {
+          $(".carousel").carousel("cycle");
+        });
+      });
+    </script>
   </body>
 
 </html>
